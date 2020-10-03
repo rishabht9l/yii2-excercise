@@ -44,7 +44,7 @@ class RouterController extends ActiveController
             'class' => AccessControl::className(),
             'rules' => [
                 [
-                    'actions' => ['list', 'index', 'create', 'view'],
+                    'actions' => ['list', 'index', 'create', 'view', 'update'],
                     'allow' => true,
                 ],
             ],
@@ -76,6 +76,22 @@ class RouterController extends ActiveController
         if ($model->validate()) {
             if ($model->save()) {
                 return $this->_sendResponse(200, ['message' => "New router has been created successfully.", 'data' => $model]);
+            }
+        }else{
+            $error_message=isset(array_values($model->getErrors())[0][0])?array_values($model->getErrors())[0][0]:'Model Errors';
+            return $this->_sendResponse(400, ['data' => $model->getErrors(), 'message' => $error_message]);
+        }
+    }
+
+    public function actionUpdate()
+    {
+
+        $params = \Yii::$app->getRequest()->getBodyParams();
+        $model = Router::find()->where(['loopback' => $params['loopback']])->one();
+        $model->load($params, '');
+        if ($model->validate()) {
+            if ($model->save()) {
+                return $this->_sendResponse(200, ['message' => "Router data has been updated", 'data' => $model]);
             }
         }else{
             $error_message=isset(array_values($model->getErrors())[0][0])?array_values($model->getErrors())[0][0]:'Model Errors';

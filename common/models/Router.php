@@ -44,6 +44,7 @@ class Router extends \yii\db\ActiveRecord
             [['loopback', 'mac_address'], 'string', 'max' => 32],
             [['sap_id'], 'unique'],
             [['hostname'], 'unique'],
+            ['status', 'default', 'value' => self::STATUS_ACTIVE],
             [['loopback'], 'unique'],
             [['mac_address'], 'unique'],
         ];
