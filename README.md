@@ -1,60 +1,16 @@
-<p align="center">
-    <a href="https://github.com/yiisoft" target="_blank">
-        <img src="https://avatars0.githubusercontent.com/u/993323" height="100px">
-    </a>
-    <h1 align="center">Yii 2 Advanced Project Template</h1>
-    <br>
-</p>
+<h1 align="center">PHP Project Excercise by using Yii2 (MVC Framework)</h1>
 
-Yii 2 Advanced Project Template is a skeleton [Yii 2](http://www.yiiframework.com/) application best for
-developing complex Web applications with multiple tiers.
+Please follow below Steps for Project Setup and Running 
+different modules.
 
-The template includes three tiers: front end, back end, and console, each of which
-is a separate Yii application.
-
-The template is designed to work in a team development environment. It supports
-deploying the application in different environments.
-
-Documentation is at [docs/guide/README.md](docs/guide/README.md).
-
-[![Latest Stable Version](https://img.shields.io/packagist/v/yiisoft/yii2-app-advanced.svg)](https://packagist.org/packages/yiisoft/yii2-app-advanced)
-[![Total Downloads](https://img.shields.io/packagist/dt/yiisoft/yii2-app-advanced.svg)](https://packagist.org/packages/yiisoft/yii2-app-advanced)
-[![Build Status](https://travis-ci.com/yiisoft/yii2-app-advanced.svg?branch=master)](https://travis-ci.com/yiisoft/yii2-app-advanced)
-
-DIRECTORY STRUCTURE
--------------------
-
-```
-common
-    config/              contains shared configurations
-    mail/                contains view files for e-mails
-    models/              contains model classes used in both backend and frontend
-    tests/               contains tests for common classes    
-console
-    config/              contains console configurations
-    controllers/         contains console controllers (commands)
-    migrations/          contains database migrations
-    models/              contains console-specific model classes
-    runtime/             contains files generated during runtime
-backend
-    assets/              contains application assets such as JavaScript and CSS
-    config/              contains backend configurations
-    controllers/         contains Web controller classes
-    models/              contains backend-specific model classes
-    runtime/             contains files generated during runtime
-    tests/               contains tests for backend application    
-    views/               contains view files for the Web application
-    web/                 contains the entry script and Web resources
-frontend
-    assets/              contains application assets such as JavaScript and CSS
-    config/              contains frontend configurations
-    controllers/         contains Web controller classes
-    models/              contains frontend-specific model classes
-    runtime/             contains files generated during runtime
-    tests/               contains tests for frontend application
-    views/               contains view files for the Web application
-    web/                 contains the entry script and Web resources
-    widgets/             contains frontend widgets
-vendor/                  contains dependent 3rd-party packages
-environments/            contains environment-based overrides
-```
+1. Clone this project.
+2. run composer install and then composer update.
+3. create new mysql db named ntt-excercise
+4. run migration command, <b> php yii migrate </b>
+5. set up virtual host for the Apis and admin
+6. for Apis set virtual host path to yii2-excercise/apis/web/ example - apis.test.localhost
+7. for Admin set virtual host path to yii2-excercise/backend/web/ example - admin.test.localhost
+8. for excercise 1, point number 2 open admin URL i.e admin.test.localhost(assumed)
+9. for excercise 1, point number 3 run command php yii router -n=2 (where value of n can be vary)
+10. for excercise 3, Apis access i have integrated Swagger Documentation. to see documentation open Url apis.test.localhost/v1/swagger/docs
+11. Apis can be accesed via token "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiIsImtpZCI6IjI5NTI4MTRmZjZiNDkyMyJ9.eyJzdWIiOiIyOTUyODE0ZmY2YjQ5MjMiLCJpc3MiOiIiLCJhdWQiOiIiLCJpYXQiOjE2MDE2NDk2NjQsImV4cCI6MTYwMTY1MzI2NCwianRpIjoiNzMwMzZjZDE2MDhlOTViIn0.XfnSXcX2hWiH6EoiNJdI3fX5iMgBQjdWadNZwhJTQF8"
