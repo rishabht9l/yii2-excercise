@@ -1,3 +1,5 @@
+<h2 align="left">Project By: Rishabh Mehrotra</h2>
+<h2 align="left">Designation: Senior PHP Developer</h2>
 <h1 align="center">PHP Project Excercise by using Yii2 (MVC Framework)</h1>
 
 Please follow below Steps for Project Setup and Running 
